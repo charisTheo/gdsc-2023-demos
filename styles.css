@@ -1,0 +1,112 @@
+:root {
+  --theme-toggle-size: 48px;
+  --header-height: 85px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  width: 100%;
+  height: 100%;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#theme-checkbox-label {
+  width: var(--theme-toggle-size);
+  height: var(--theme-toggle-size);
+  position: fixed;
+  z-index: 1;
+  right: 2em;
+  top: 1em;
+}
+#theme-checkbox + #theme-checkbox-label .label {
+  visibility: hidden;
+  position: absolute;
+}
+#theme-checkbox,
+#theme-checkbox + #theme-checkbox-label .dark-theme,
+#theme-checkbox:checked + #theme-checkbox-label .light-theme {
+  display: none;
+}
+#theme-checkbox:checked + #theme-checkbox-label .dark-theme,
+#theme-checkbox + #theme-checkbox-label .light-theme {
+  display: block;
+}
+#theme-checkbox + #theme-checkbox-label .dark-theme svg {
+  fill: rgb(255 235 59);
+}
+#theme-checkbox + #theme-checkbox-label .light-theme svg {
+  fill: #000;
+}
+
+#theme-checkbox:checked + #theme-checkbox-label + #root {
+  --text-color: rgb(255 255 255);
+  --background-color: rgb(51 68 77);
+  --background-color-darker: rgb(25 33 38);
+  --link-color: rgb(78 235 255);
+  --accent-color: rgb(255 235 59);
+}
+
+#root {
+  --text-color: rgb(51 68 77);
+  --background-color: rgb(255 255 255);
+  --background-color-darker: rgb(96 125 139 / 14%);
+  --link-color: rgb(63 81 181);
+  --accent-color: rgb(233 30 99);
+  
+  accent-color: var(--accent-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: 2em calc(2em + var(--theme-toggle-size)) 2em 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--background-color-darker);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 8px;
+}
+nav ul li a {
+  padding: 6px 12px;
+}
+
+a, a:visited {
+  color: var(--link-color);
+}
+
+main, footer {
+  padding: 2rem;
+}
+
+main {
+  padding-top: var(--header-height);
+}
+
+section {
+  min-height: 80vh;
+}
+
+footer {
+  text-align: center;
+  background-color: var(--background-color-darker);
+}

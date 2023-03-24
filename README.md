@@ -1,1 +1,1 @@
-# gdsc-2023-demos
+# GDSC 2023 - Accessible UI elements demos
