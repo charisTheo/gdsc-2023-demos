@@ -1,0 +1,40 @@
+details {
+  background-color: rgb(0 0 0 / .2);
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  padding: 1em;
+  margin: 2em 1em;
+  max-width: 800px;
+}
+details summary {
+  padding: 0.5em 0.5em 0.5em 0;
+  cursor: pointer;
+}
+details[open] {
+  background-color: var(--background-color-darker);
+}
+details[open] summary {
+  margin-block-end: 1em;
+}
+
+/* Emoji hex codes reference: https://www.w3schools.com/charsets/ref_emoji.asp */
+details.custom-icon-1,
+details.custom-icon-2 {
+  border: none;
+}
+details.custom-icon-2 {
+  box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.3);
+}
+details.custom-icon-1 summary {
+  list-style-type: '\1F4A1  ';
+}
+details.custom-icon-1[open] summary {
+  list-style-type: disclosure-open;
+}
+
+details.custom-icon-2 summary {
+  list-style-type: '\1F449  ';
+}
+details.custom-icon-2[open] summary {
+  list-style-type: '\1F447  ';
+}

@@ -1,0 +1,10 @@
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  /* TODO nav and theme toggle button */
+  /* * {
+    transition: none !important;
+    animation: none !important;
+  } */
+}

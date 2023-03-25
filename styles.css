@@ -1,11 +1,9 @@
-:root {
-  --header-height: 85px;
-}
-
 *, *:before, *:after {
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body, html {
   width: 100%;
   min-height: 100%;
@@ -14,6 +12,9 @@ body, html {
   font-size: 100%;
   margin: 0;
   padding: 0;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+  line-height: 1.6em;
 }
 
 body {
@@ -53,10 +54,6 @@ header {
 
 main, footer {
   padding: 2rem;
-}
-
-main {
-  padding-top: calc(1rem + var(--header-height));
 }
 
 section {

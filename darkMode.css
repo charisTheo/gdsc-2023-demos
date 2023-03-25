@@ -7,18 +7,21 @@
   cursor: pointer;
   position: relative;
 }
+
 .dark-theme-icon,
 .light-theme-icon {
   position: absolute;
   left: 0;
   top: 0;
 }
+
 .dark-theme-icon {
   fill: rgb(255 235 59);
 }
 .light-theme-icon {
   fill: #000;
 }
+
 body .light-theme-icon,
 body.dark .dark-theme-icon {
   animation: appear .35s ease-in-out forwards;
@@ -27,6 +30,7 @@ body .dark-theme-icon,
 body.dark .light-theme-icon {
   animation: hide .35s ease-in-out forwards;
 }
+
 @keyframes hide {
   0% {
     opacity: 1;
