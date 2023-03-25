@@ -8,13 +8,11 @@
   position: relative;
 }
 
-.dark-theme-icon,
-.light-theme-icon {
+[class*="theme-icon"] {
   position: absolute;
   left: 0;
   top: 0;
 }
-
 .dark-theme-icon {
   fill: rgb(255 235 59);
 }

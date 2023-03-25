@@ -2,9 +2,14 @@
   html {
     scroll-behavior: auto;
   }
-  /* TODO nav and theme toggle button */
-  /* * {
-    transition: none !important;
-    animation: none !important;
-  } */
+
+  nav,
+  .backdrop {
+    transition: none;
+  }
+
+  body.dark [class*="theme-icon"],
+  body [class*="theme-icon"] {
+    animation-duration: 0s;
+  }
 }

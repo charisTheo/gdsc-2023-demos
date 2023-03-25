@@ -18,10 +18,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Permanent+Marker&display=swap"
     rel="stylesheet">
+
+  <link rel="stylesheet" href="./highlight/styles/github-dark.min.css">
+  <script defer src="./highlight/highlight.min.js" onload="hljs.highlightAll()"></script>
 </head>
 
 <body>
-  <a id="skip-to-content-link" tabindex='2' href='#main'>Skip to content</a>
+  <a id="skip-to-content-link" href='#main'>Skip to content</a>
 
   <header>
     <button title='Open menu' id='menu-open-button'>
@@ -97,7 +100,23 @@
 
     <section id='reduced-motion'>
       <h2>Reduced motion</h2>
+      <pre><code>
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
 
+    nav,
+    .backdrop {
+      transition: none;
+    }
+
+    body.dark [class*="theme-icon"],
+    body [class*="theme-icon"] {
+      animation-duration: 0s;
+    }
+  }
+      </code></pre>
     </section>
 
     <section id='disclosure-widget'>
