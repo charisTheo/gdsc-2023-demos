@@ -39,3 +39,5 @@ function updateTheme(darkMode) {
     themeToggleButton.title = 'Turn on dark mode';
   }
 }
+
+document.querySelector('#skip-to-content-html-code').textContent = `  <a id="skip-to-content-link" href='#main'>Skip to content</a>`

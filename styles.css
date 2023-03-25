@@ -58,6 +58,11 @@ main, footer {
 
 section {
   min-height: 80vh;
+  padding-inline-start: 2em;
+}
+section > h2 {
+  margin-inline-start: -1em;
+  margin-block: 1.5em;
 }
 
 footer {
