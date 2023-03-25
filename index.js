@@ -41,18 +41,18 @@ function updateTheme(darkMode) {
 }
 
 document.querySelector('#responsive-navigation-html-code').textContent = `  <header>
-    <button title='Open menu' id='menu-open-button'>
+    <button title="Open menu" id="menu-open-button">
       <div class="menu-open-icon"></div>
     </button>
 
-    <nav tabindex='-1'>
-      <button title='Close menu' id='menu-close-button'>
+    <nav tabindex="-1">
+      <button title="Close menu" id="menu-close-button">
         <div class="menu-close-icon"></div>
       </button>
 
       <ul>
-        <li><a href='/path'>Link name</a></li>
-        <li><a href='/path'>Link name</a></li>
+        <li><a href="/path">Link name</a></li>
+        <li><a href="/path">Link name</a></li>
       </ul>
     </nav>
 
@@ -61,14 +61,36 @@ document.querySelector('#responsive-navigation-html-code').textContent = `  <hea
 `
 
 
-document.querySelector('#skip-to-content-html-code').textContent = `  <a id="skip-to-content-link" href='#main'>Skip to content</a>`
+document.querySelector('#skip-to-content-html-code').textContent = `  <a id="skip-to-content-link" href="#main">Skip to content</a>`
 
 document.querySelector('#dark-theme-html-code').textContent = `  <button
-id='theme-toggle-button'
+    id="theme-toggle-button"
+    title="Title added dynamically from JavaScript"
     aria-label="auto"
     aria-live="polite"
   >
-    <div class='dark-theme-icon' aria-hidden='true'></div>
-    <div class='light-theme-icon' aria-hidden='true'></div>
+    <div class="dark-theme-icon" aria-hidden="true"></div>
+    <div class="light-theme-icon" aria-hidden="true"></div>
   </button>
+`
+document.querySelector('#icon-button-html-code').textContent = `  <button
+    class="icon-button"
+    title="Button description"
+    aria-label="auto"
+    aria-live="polite"
+  >
+    <svg
+      class="button-icon"
+      aria-hidden="true"
+      height="48"
+      width="48"
+      src="/path/to/icon.svg"
+    ></svg>
+  </button>
+`
+
+document.querySelector('#disclosure-widget-html-code').textContent = `  <details>
+    <summary>Basic example</summary>
+    <p>More details here</p>
+  </details>
 `
