@@ -70,6 +70,11 @@ footer {
   background-color: var(--background-color-darker);
 }
 
+h1 {
+  font-weight: 700;
+  text-align: center;
+}
+
 a, a:visited {
   transition: color 0.25s;
   color: var(--link-color);

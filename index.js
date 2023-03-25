@@ -40,10 +40,31 @@ function updateTheme(darkMode) {
   }
 }
 
+document.querySelector('#responsive-navigation-html-code').textContent = `  <header>
+    <button title='Open menu' id='menu-open-button'>
+      <div class="menu-open-icon"></div>
+    </button>
+
+    <nav tabindex='-1'>
+      <button title='Close menu' id='menu-close-button'>
+        <div class="menu-close-icon"></div>
+      </button>
+
+      <ul>
+        <li><a href='/path'>Link name</a></li>
+        <li><a href='/path'>Link name</a></li>
+      </ul>
+    </nav>
+
+    <div class="backdrop"></div>
+  </header>
+`
+
+
 document.querySelector('#skip-to-content-html-code').textContent = `  <a id="skip-to-content-link" href='#main'>Skip to content</a>`
 
 document.querySelector('#dark-theme-html-code').textContent = `  <button
-    id='theme-toggle-button'
+id='theme-toggle-button'
     aria-label="auto"
     aria-live="polite"
   >
