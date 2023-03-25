@@ -1,0 +1,59 @@
+#theme-toggle-button {
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.dark-theme-icon,
+.light-theme-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.dark-theme-icon {
+  fill: rgb(255 235 59);
+}
+.light-theme-icon {
+  fill: #000;
+}
+body .light-theme-icon,
+body.dark .dark-theme-icon {
+  animation: appear .35s ease-in-out forwards;
+}
+body .dark-theme-icon,
+body.dark .light-theme-icon {
+  animation: hide .35s ease-in-out forwards;
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+    transform: rotateZ(0deg);
+    transform-origin: bottom right;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotateZ(180deg);
+    transform-origin: bottom right;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: rotateZ(180deg);
+    transform-origin: bottom right;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateZ(360deg);
+    transform-origin: bottom right;
+  }
+}

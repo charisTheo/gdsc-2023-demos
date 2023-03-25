@@ -1,0 +1,15 @@
+#skip-to-content-link {
+  transform: translateY(-100%);
+  position: fixed;
+  top: 0px;
+  left: 10px;
+  padding: 20px;
+  z-index: 3;
+  color: var(--link-color);
+  background-color: var(--background-color);
+  border-radius: 5px;
+  border: 2px solid var(--text-color);
+}
+#skip-to-content-link:focus {
+  transform: translateY(10%);
+}
