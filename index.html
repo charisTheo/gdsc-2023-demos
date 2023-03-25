@@ -116,6 +116,50 @@
     <section id='dark-theme'>
       <h2>Dark theme</h2>
 
+      <pre><code id='dark-theme-html-code'></code></pre>
+
+      <pre><code>
+  const themeToggleButton = document.querySelector('#theme-toggle-button');
+  const initialThemePreference = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  updateTheme(initialThemePreference);
+
+  themeToggleButton.addEventListener('click', () => {
+    updateTheme(!document.body.classList.contains('dark'));
+  });
+
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', ({ matches }) => updateTheme(matches));
+
+  function updateTheme(darkMode) {
+    if (darkMode) {
+      document.body.classList.add('dark');
+      themeToggleButton.title = 'Turn on light mode';
+    } else {
+      document.body.classList.remove('dark');
+      themeToggleButton.title = 'Turn on dark mode';
+    }
+  }
+      </code></pre>
+
+      <pre><code>
+  body {
+    --text-color: rgb(51 68 77);
+    --background-color: rgb(255 255 255);
+    --link-color: rgb(63 81 181);
+
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+  body.dark {
+    --text-color: rgb(255 255 255);
+    --background-color: rgb(51 68 77);
+    --link-color: rgb(78 235 255);
+  }
+  a {
+    color: var(--link-color);
+  }
+      </code></pre>
     </section>
 
     <section id='reduced-motion'>

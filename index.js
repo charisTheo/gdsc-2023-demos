@@ -41,3 +41,13 @@ function updateTheme(darkMode) {
 }
 
 document.querySelector('#skip-to-content-html-code').textContent = `  <a id="skip-to-content-link" href='#main'>Skip to content</a>`
+
+document.querySelector('#dark-theme-html-code').textContent = `  <button
+    id='theme-toggle-button'
+    aria-label="auto"
+    aria-live="polite"
+  >
+    <div class='dark-theme-icon' aria-hidden='true'></div>
+    <div class='light-theme-icon' aria-hidden='true'></div>
+  </button>
+`
