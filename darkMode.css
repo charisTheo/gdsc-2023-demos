@@ -1,31 +1,16 @@
 #theme-toggle-button {
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
   position: relative;
-  border-radius: 50%;
-  transition: box-shadow 0.25s;
-}
-#theme-toggle-button:hover {
-  box-shadow: 0 3px 9px 1px rgba(0, 0, 0, 0.4);
-}
-#theme-toggle-button:active {
-  box-shadow: none;
 }
 
 [class*="theme-icon"] {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 7px;
 }
-.dark-theme-icon {
+#theme-toggle-button .dark-theme-icon {
   fill: rgb(255 235 59);
 }
-.light-theme-icon {
+#theme-toggle-button .light-theme-icon {
   fill: #000;
 }
 
