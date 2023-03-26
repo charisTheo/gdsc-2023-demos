@@ -8,11 +8,13 @@
   <title>GDSC 2023 - Accessible UI elements</title>
 
   <link rel="stylesheet" href="/styles.css" type="text/css" />
+  <link rel="stylesheet" href="/buttons.css" type="text/css" />
   <link rel="stylesheet" href="/nav.css" type="text/css" />
   <link rel="stylesheet" href="/skipToContent.css" type="text/css" />
   <link rel="stylesheet" href="/darkMode.css" type="text/css" />
   <link rel="stylesheet" href="/disclosureWidget.css" type="text/css" />
   <link rel="stylesheet" href="/reducedMotion.css" type="text/css" />
+  <link rel="stylesheet" href="/dialog.css" type="text/css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +47,7 @@
         <li><a href='#reduced-motion'>Reduced motion</a></li>
         <li><a href='#disclosure-widget'>Disclosure Widget</a></li>
         <li><a href='#icon-button'>Icon button</a></li>
+        <li><a href='#dialog'>Dialog</a></li>
         <li><a href='#dropdown'>Dropdown</a></li>
       </ul>
     </nav>
@@ -53,6 +56,7 @@
 
     <button
       id='theme-toggle-button'
+      class="icon-button"
       aria-label="auto"
       aria-live="polite"
     >
@@ -314,8 +318,69 @@
   }</code></pre>
     </section>
 
+    <section id='dialog'>
+      <h2>Dialog</h2>
+
+      <h3>Dialog HTML</h3>
+      <pre><code id="dialog-html-code"></code></pre>
+
+      <h3>Dialog CSS</h3>
+      <pre><code>  dialog {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  dialog::backdrop {
+    background: rgb(0 0 0 / .5);
+  }
+  dialog .icon-button {
+    display: block;
+  }</code></pre>
+
+      <h3>Dialog JavaScript</h3>
+      <pre><code>  const showDialogButton = document.querySelector('#show-dialog-button');
+  showDialogButton.addEventListener('click', () => {
+    const dialog = document.querySelector(showDialogButton.dataset.dialog);
+    dialog.showModal();
+  });</code></pre>
+
+      <h3>Focus trap JavaScript</h3>
+      <pre><code>  const focusTrapDialog = document.querySelector('#focus-trap-dialog');
+  focusTrapDialog.addEventListener('keydown', (event) => {
+    if (event.key === 'Tab') {
+      const firstFocusableElement = focusTrapDialog.querySelector('.icon-button');
+      const lastFocusableElement = focusTrapDialog.querySelector('form[method="dialog"]:last-of-type button');
+
+      if (event.shiftKey) {
+        if (document.activeElement === firstFocusableElement) {
+          lastFocusableElement.focus();
+          event.preventDefault();
+        }
+      } else if (document.activeElement === lastFocusableElement) {
+        firstFocusableElement.focus();
+        event.preventDefault();
+      }
+    }
+  });</code></pre>
+
+      <h3>Demos</h3>
+      <button
+        class="custom-button"
+        data-dialog="#basic-dialog"
+        id="show-dialog-button"
+      >Show dialog</button>
+      <button
+        class="custom-button"
+        data-dialog="#focus-trap-dialog"
+        id="show-focus-trap-dialog-button"
+      >Show dialog with focus trap</button>
+
+      <!-- TODO link to Popover explainer: https://open-ui.org/components/popover.research.explainer/ -->
+    </section>
+
     <section id='dropdown'>
       <h2>Dropdown</h2>
+      <h3>Experimental &lt;selectmenu&gt; element</h3>
+      <!-- TODO link to demos: https://microsoftedge.github.io/Demos/selectmenu/ -->
 
     </section>
   </main>
@@ -323,6 +388,44 @@
   <footer>
     <p>GDSC 2023</p>
   </footer>
+
+  <dialog id="basic-dialog">
+    <form method="dialog">
+      <button class="icon-button" aria-label="auto" aria-live="polite">
+        <span hidden>Close dialog</span>
+        <svg aria-hidden="true" height="48" width="48" viewBox="0 96 960 960" xmlns="http://www.w3.org/2000/svg">
+          <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+        </svg>
+      </button>
+    </form>
+
+    <p>This is a basic dialog</p>
+
+    <form method="dialog">
+      <button class="custom-button">OK</button>
+    </form>
+  </dialog>
+
+  <dialog id="focus-trap-dialog">
+    <form method="dialog">
+      <button class="icon-button" aria-label="auto" aria-live="polite">
+        <span hidden>Close dialog</span>
+        <svg aria-hidden="true" height="48" width="48" viewBox="0 96 960 960" xmlns="http://www.w3.org/2000/svg">
+          <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+        </svg>
+      </button>
+    </form>
+
+    <p>This is a dialog that traps focus so that focus can never leave this dialog</p>
+
+    <!-- Add a few example focusable input elements -->
+    <input type="text" placeholder="Example input">
+    <button class="custom-button">Example button</button>
+
+    <form method="dialog">
+      <button class="custom-button">OK</button>
+    </form>
+  </dialog>
 
   <script src="/index.js"></script>
 </body>

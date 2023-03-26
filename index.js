@@ -40,6 +40,49 @@ function updateTheme(darkMode) {
   }
 }
 
+const showDialogButtons = document.querySelectorAll('button[id$="-dialog-button"]');
+showDialogButtons.forEach((showDialogButton) => {
+  showDialogButton.addEventListener('click', () => {
+    const dialog = document.querySelector(showDialogButton.dataset.dialog);
+    dialog.showModal();
+  });
+});
+
+const focusTrapDialog = document.querySelector('#focus-trap-dialog');
+focusTrapDialog.addEventListener('keydown', (event) => {
+  if (event.key === 'Tab') {
+    const firstFocusableElement = focusTrapDialog.querySelector('.icon-button');
+    const lastFocusableElement = focusTrapDialog.querySelector('form[method="dialog"]:last-of-type button');
+
+    if (event.shiftKey) {
+      if (document.activeElement === firstFocusableElement) {
+        lastFocusableElement.focus();
+        event.preventDefault();
+      }
+    } else if (document.activeElement === lastFocusableElement) {
+      firstFocusableElement.focus();
+      event.preventDefault();
+    }
+  }
+});
+
+document.querySelector('#dialog-html-code').textContent = `  <button data-dialog="#basic-dialog" id="show-dialog-button">Show dialog</button>
+
+  <dialog id="basic-dialog">
+    <form method="dialog">
+      <button class="icon-button" aria-label="auto" aria-live="polite">
+        <span hidden>Close dialog</span>
+        <svg aria-hidden="true" height="48" width="48" src="/path/to/icon.svg"></svg>
+      </button>
+    </form>
+
+    <p>This is a basic dialog</p>
+
+    <form method="dialog">
+      <button>OK</button>
+    </form>
+  </dialog>`
+
 document.querySelector('#responsive-navigation-html-code').textContent = `  <header>
     <button title="Open menu" id="menu-open-button">
       <div class="menu-open-icon"></div>

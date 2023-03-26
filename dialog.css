@@ -1,0 +1,32 @@
+dialog {
+  --dialog-padding: 2em;
+  border-radius: 10px;
+  text-align: center;
+  padding: var(--dialog-padding);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+dialog::backdrop {
+  background: rgb(0 0 0 / .5);
+}
+dialog .icon-button {
+  display: block;
+  margin: calc(var(--dialog-padding) / -2) calc(var(--dialog-padding) / -2) 1em auto;
+}
+
+/* Fix for autofocus after opening dialog which is not visible with :focus-visible */
+dialog button:focus {
+  outline: 3px solid var(--text-color);
+}
+
+dialog > * {
+  display: block;
+  margin: 2em auto;
+}
+dialog > form[method="dialog"]:first-child {
+  margin-top: 0;
+}
+
+#show-focus-trap-dialog-button {
+  margin-inline-start: 1em;
+}
