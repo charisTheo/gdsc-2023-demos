@@ -45,6 +45,8 @@ body {
   accent-color: var(--accent-color);
   color: var(--text-color);
   background-color: var(--background-color);
+
+  transition: background-color 0.3s, color 0.3s;
 }
 body.dark {
   --text-color: rgb(255 255 255);
@@ -53,20 +55,6 @@ body.dark {
   --link-color: rgb(78 235 255);
   --link-color-darker: rgb(33, 173, 192);
   --accent-color: rgb(255 235 59);
-}
-
-header {
-  position: sticky;
-  left: 0;
-  top: 0;
-  width: 100%;
-  padding: 1em 2em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--background-color-darker);
-  overflow-x: hidden;
 }
 
 main, footer {
@@ -110,4 +98,13 @@ section pre code.hljs {
   border-radius: 30px;
   max-width: 700px;
   padding-inline-end: 3em;
+}
+
+.github-link-wrapper {
+  text-align: end;
+  margin-bottom: 2em;
+}
+.github-logo {
+  fill: var(--text-color);
+  vertical-align: bottom;
 }

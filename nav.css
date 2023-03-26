@@ -1,3 +1,18 @@
+header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color-darker);
+  overflow-x: hidden;
+  box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.3);
+}
+
 #menu-open-button,
 #menu-close-button {
   width: 48px;

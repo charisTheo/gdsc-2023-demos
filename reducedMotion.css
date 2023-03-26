@@ -3,6 +3,7 @@
     scroll-behavior: auto;
   }
 
+  body,
   nav,
   .backdrop {
     transition: none;
