@@ -27,6 +27,6 @@ dialog > form[method="dialog"]:first-child {
   margin-top: 0;
 }
 
-#show-focus-trap-dialog-button {
-  margin-inline-start: 1em;
+section#dialog > button {
+  margin: 1em;
 }
