@@ -28,7 +28,7 @@
 <body>
   <a id="skip-to-content-link" href='#main'>Skip to content</a>
 
-  <header>
+  <header tabindex='-1'>
     <button title='Open menu' id='menu-open-button'>
       <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
         <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
@@ -155,6 +155,26 @@
     outline: none;
     border: none;
     cursor: pointer;
+  }</code></pre>
+
+      <h3>Navigation JavaScript</h3>
+      <pre><code>  const nav = document.querySelector('nav');
+  const menuOpenButton = document.querySelector('#menu-open-button');
+  const menuCloseButton = document.querySelector('#menu-close-button');
+  
+  menuOpenButton.addEventListener('click', openMenu);
+  nav.addEventListener('blur', closeMenu);
+  menuCloseButton.addEventListener('click', closeMenu);
+  
+  function openMenu() {
+    nav.classList.add('open');
+    nav.focus();
+  }
+  function closeMenu() {
+    // Allow the menu to close after the link click event has finished bubbling
+    setTimeout(() => {
+      nav.classList.remove('open');
+    }, 100);
   }</code></pre>
     </section>
 
