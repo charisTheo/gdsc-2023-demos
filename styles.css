@@ -57,9 +57,6 @@ body.dark {
   --accent-color: rgb(255 235 59);
 }
 
-main, footer {
-  padding: 2rem;
-}
 
 h1,
 h2,
@@ -70,13 +67,12 @@ h6 {
   line-height: 1.25em;
 }
 
+main, footer {
+  padding: 1rem;
+}
+
 section {
   min-height: 80vh;
-  padding-inline-start: 2em;
-}
-section > h2 {
-  margin-inline-start: -1em;
-  margin-block: 1.5em;
 }
 
 footer {
@@ -105,7 +101,7 @@ input {
 
 section pre code.hljs {
   border-radius: 30px;
-  max-width: 700px;
+  max-width: min(1000px, 90vw);
   padding-inline-end: 3em;
 }
 
@@ -116,4 +112,17 @@ section pre code.hljs {
 .github-logo {
   fill: var(--text-color);
   vertical-align: bottom;
+}
+
+@media screen and (min-width: 767px) {
+  main, footer {
+    padding: 2rem;
+  }
+  section {
+    padding-inline-start: 2em;
+  }
+  section > h2 {
+    margin-inline-start: -1em;
+    margin-block: 1.5em;
+  }
 }
