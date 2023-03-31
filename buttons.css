@@ -44,6 +44,7 @@ button.custom-button:disabled {
 }
 .icon-button:active {
   box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .icon-button svg {
   width: 100%;

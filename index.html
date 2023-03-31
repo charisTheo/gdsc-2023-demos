@@ -161,11 +161,11 @@
       <pre><code>  const nav = document.querySelector('nav');
   const menuOpenButton = document.querySelector('#menu-open-button');
   const menuCloseButton = document.querySelector('#menu-close-button');
-  
+
   menuOpenButton.addEventListener('click', openMenu);
   nav.addEventListener('blur', closeMenu);
   menuCloseButton.addEventListener('click', closeMenu);
-  
+
   function openMenu() {
     nav.classList.add('open');
     nav.focus();
@@ -338,6 +338,7 @@
   }
   .icon-button:active {
     box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.2);
   }</code></pre>
 
       <h3>Global keyboard focus styles</h3>
@@ -401,8 +402,6 @@
         data-dialog="#focus-trap-dialog"
         id="show-focus-trap-dialog-button"
       >Show dialog with focus trap</button>
-
-      <!-- TODO link to Popover explainer: https://open-ui.org/components/popover.research.explainer/ -->
     </section>
   </main>
 

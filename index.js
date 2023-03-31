@@ -72,7 +72,7 @@ document.querySelector('#dialog-html-code').textContent = `  <button data-dialog
     <form method="dialog">
       <button class="icon-button" aria-label="auto" aria-live="polite">
         <span hidden>Close dialog</span>
-        <svg aria-hidden="true" height="48" width="48" src="/path/to/icon.svg"></svg>
+        <img aria-hidden="true" height="48" width="48" src="/path/to/icon.svg" />
       </button>
     </form>
 
@@ -116,19 +116,15 @@ document.querySelector('#dark-theme-html-code').textContent = `  <button
     <div class="light-theme-icon" aria-hidden="true"></div>
   </button>
 `
-document.querySelector('#icon-button-html-code').textContent = `  <button
-    class="icon-button"
-    title="Button description"
-    aria-label="auto"
-    aria-live="polite"
-  >
-    <svg
-      class="button-icon"
-      aria-hidden="true"
-      height="48"
-      width="48"
-      src="/path/to/icon.svg"
-    ></svg>
+document.querySelector('#icon-button-html-code').textContent = `  <button class="icon-button" title="Button description">
+    <img class="button-icon" aria-hidden="true" height="48" width="48" src="/path/to/icon.svg" />
+  </button>
+
+  <!-- OR -->
+
+  <button class="icon-button">
+    <span hidden>Button description</span>
+    <img class="button-icon" aria-hidden="true" height="48" width="48" src="/path/to/icon.svg" />
   </button>
 `
 
